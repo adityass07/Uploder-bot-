@@ -2,18 +2,18 @@ import os
 from os import environ
 
 # API Configuration
-API_ID = int(os.environ.get("API_ID", "20025094"))
-API_HASH = os.environ.get("API_HASH", "c17eb956b387ff9f0dae6c7409bc6cf5")
+API_ID = int(os.environ.get("API_ID", "1888747"))
+API_HASH = os.environ.get("API_HASH", "0d707e8ae15254b1453c614bf3026c32")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 
-CREDIT = os.environ.get("CREDIT", "𝐈𝐓'𝐬𝐆𝐎𝐋𝐔")
+CREDIT = os.environ.get("CREDIT", "@adisxverified")
 # MongoDB Configuration
 DATABASE_NAME = os.environ.get("DATABASE_NAME", "uploder")
 DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://yfree1232_db_user:NtdjPUmAgl7iEuKE@uploder.6fhrdxh.mongodb.net/?appName=Uploder")  # Add your own atlas db
 MONGO_URL = DATABASE_URL  # For auth system
 
 # Owner and Admin Configuration
-OWNER_ID = int(os.environ.get("OWNER_ID", "7637180874"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "7335874062"))
 ADMINS = [int(x) for x in os.environ.get("ADMINS", "").split()]  # Default to owner ID
 
 # Channel Configuration
@@ -59,6 +59,7 @@ Please contact the admin to get access.</blockquote>""",
 
 <blockquote>Use format: {format}</blockquote>"""
 }
+
 
 
 
