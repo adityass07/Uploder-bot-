@@ -797,18 +797,20 @@ async def txt_handler(bot: Client, m: Message):
                     except Exception:
                         data = None
             
-                    # DRM response (MPD + KEYS)
-                    if isinstance(data, dict) and "KEYS" in data and "MPD" in data:
-                        mpd = data.get("MPD")
-                        keys = data.get("KEYS", [])
-                        url = mpd
-                        keys_string = " ".join([f"--key {k}" for k in keys])
-            
-                    # Non-DRM response (direct url)
-                    elif isinstance(data, dict) and "url" in data:
-                        url = data.get("url")
-                        keys_string = ""
-            
+                    # DRM / NON-DRM handling (NEW LOGIC)
+
+try:
+    # DRM MPD + Keys
+    mpd, keys = helper.get_mps_and_keys2(url)
+    url = mpd
+    keys_string = " ".join([f"--key {k}" for k in keys])
+
+except Exception as e:
+    # NON DRM MPD
+    mpd = helper.get_mps_and_keys3(url)
+    url = mpd
+    keys_string = ""
+    
                     else:
                         # Unexpected response format — fallback to helper
                         try:
