@@ -76,7 +76,7 @@ def duration(filename):
     return float(result.stdout)
 
 
-def get_mps_and_keys(api_url):
+def get_mps_and_keys2(api_url):
     response = requests.get(api_url)
     response_json = response.json()
     mpd = response_json.get('mpd_url')
@@ -84,6 +84,12 @@ def get_mps_and_keys(api_url):
     return mpd, keys
 
 
+def get_mps_and_keys3(api_url):
+    response = requests.get(api_url)
+    response_json = response.json()
+    mpd = response_json.get('url')
+    return mpd
+    
    
 def exec(cmd):
         process = subprocess.run(cmd, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
