@@ -797,13 +797,15 @@ async def txt_handler(bot: Client, m: Message):
                     except Exception:
                         data = None
             
-                    # DRM / NON-DRM handling (NEW LOGIC)
+                    # DRM / NON DRM handling (NEW LOGIC)
+
+try:
     # DRM MPD + Keys
     mpd, keys = helper.get_mps_and_keys2(url)
     url = mpd
     keys_string = " ".join([f"--key {k}" for k in keys])
 
-except Exception as e:
+except Exception:
     # NON DRM MPD
     mpd = helper.get_mps_and_keys3(url)
     url = mpd
