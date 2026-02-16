@@ -799,7 +799,7 @@ async def txt_handler(bot: Client, m: Message):
             
                     # DRM / NON DRM handling (NEW LOGIC)
 
-try:
+
     # DRM MPD + Keys
 
 if isinstance(data, dict) and "KEYS" in data and "MPD" in data:  
