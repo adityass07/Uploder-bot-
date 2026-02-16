@@ -798,8 +798,6 @@ async def txt_handler(bot: Client, m: Message):
                         data = None
             
                     # DRM / NON-DRM handling (NEW LOGIC)
-
-try:
     # DRM MPD + Keys
     mpd, keys = helper.get_mps_and_keys2(url)
     url = mpd
